@@ -3,6 +3,14 @@
     <div class="container">
       <div class="image">
       </div>
+      <div class="first-column">
+        <div class="title">
+          <h3>Hi There! I'm</h3>
+          <h1>Rahul TP</h1>
+          <h2>Developer</h2>
+        </div>
+      </div>
+      <div class="second-column">b</div>
     </div>
   </div>
 </template>
@@ -22,8 +30,9 @@ export default {
 <style lang="scss" scoped>
   .home {
     .container {
-      margin: 24px;
+      padding: 24px;
       display: flex;
+      background: #ffe4e4;
 
       .image {
         height: calc(100vh - 48px);
@@ -31,6 +40,42 @@ export default {
         background-image: url(../assets/images/rahul.png);
         background-size: cover;
         background-position: center center;
+      }
+
+      .first-column {
+        width: 33.33vw;
+
+        .title {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: calc(50vh - 72px);
+
+          h3 {
+            font-size: 20px;
+            color: #666666;
+            font-weight: 400;
+          }
+
+          h1 {
+            font-size: 35px;
+            color: #444444;
+            font-weight: 900;
+            margin-top: 15px;
+            margin-bottom: 10px;
+          }
+
+          h2 {
+            font-size: 23px;
+            color: #ff7804;
+            font-weight: 900;
+          }
+        }
+      }
+
+      .second-column {
+        width: 33.33vw;
       }
     }
   }
