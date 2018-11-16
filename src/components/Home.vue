@@ -9,16 +9,22 @@
           <h1>Rahul TP</h1>
           <h2>Developer</h2>
         </div>
-        <div class="portfolio">
-          <h2>Portfolio</h2>
+        <div class="portfolio box">
+          <h2>
+            <span data-hover="Portfolio">Portfolio</span>
+          </h2>
         </div>
       </div>
       <div class="second-column">
-        <div class="about">
-          <h2>About me</h2>
+        <div class="about box">
+          <h2>
+            <span data-hover="About me">About me</span>
+          </h2>
         </div>
-        <div class="contact">
-          <h2>Get in touch</h2>
+        <div class="contact box">
+          <h2>
+            <span data-hover="Get in touch">Get in touch</span>
+          </h2>
         </div>
       </div>
     </div>
@@ -86,18 +92,7 @@ export default {
         }
 
         .portfolio {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          height: calc(50vh - 36px);
-          background: #ffffff;
-
-          h2 {
-            font-size: 30px;
-            color: #ff7804;
-            font-weight: 900;
-          }
+          
         }
       }
 
@@ -106,33 +101,64 @@ export default {
         margin-left: 24px;
 
         .about {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          height: calc(50vh - 36px);
-          background: #ffffff;
           margin-bottom: 24px;
-
-          h2 {
-            font-size: 30px;
-            color: #ff7804;
-            font-weight: 900;
-          }
         }
 
         .contact {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          height: calc(50vh - 36px);
-          background: #ffffff;
+          
+        }
+      }
 
+      .box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: calc(50vh - 36px);
+        background: #ffffff;
+        cursor: pointer;
+        transition: 0.4s;
+
+        &:hover {
           h2 {
-            font-size: 30px;
-            color: #ff7804;
-            font-weight: 900;
+            opacity: 1;
+            color: #f33b01;
+
+            span {
+              transform: translateY(60px);
+            }
+          }
+        }
+
+        h2 {
+          display:inline-block;
+          overflow: hidden;
+          font-size: 30px;
+          color: #ff7804;
+          font-weight: 900;
+          opacity: 1;
+          transition: 0.4s;
+
+          span{
+            display: inline-block;
+            position:relative;
+            transition: transform 600ms;
+
+            &::before {
+              content: attr(data-hover);
+              position: absolute;
+              top: -60px;
+              left:0;
+              transform: translate3d(0,0,0);
+            }
+
+            &::after{
+              content: attr(data-hover);
+              position: absolute;
+              top: -31px;
+              left:0;
+              transform: translate3d(0,0,0);
+            }
           }
         }
       }
