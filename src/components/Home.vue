@@ -13,7 +13,11 @@
           <h2>Portfolio</h2>
         </div>
       </div>
-      <div class="second-column">b</div>
+      <div class="second-column">
+        <div class="about">
+          <h2>About me</h2>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -47,6 +51,7 @@ export default {
 
       .first-column {
         width: 33.33vw;
+        margin-left: 24px;
 
         .title {
           display: flex;
@@ -95,6 +100,22 @@ export default {
 
       .second-column {
         width: 33.33vw;
+        margin-left: 24px;
+
+        .about {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: calc(50vh - 36px);
+          background: #ffffff;
+
+          h2 {
+            font-size: 30px;
+            color: #ff7804;
+            font-weight: 900;
+          }
+        }
       }
     }
   }
