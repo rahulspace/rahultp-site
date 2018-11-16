@@ -17,6 +17,9 @@
         <div class="about">
           <h2>About me</h2>
         </div>
+        <div class="contact">
+          <h2>Get in touch</h2>
+        </div>
       </div>
     </div>
   </div>
@@ -103,6 +106,22 @@ export default {
         margin-left: 24px;
 
         .about {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: calc(50vh - 36px);
+          background: #ffffff;
+          margin-bottom: 24px;
+
+          h2 {
+            font-size: 30px;
+            color: #ff7804;
+            font-weight: 900;
+          }
+        }
+
+        .contact {
           display: flex;
           flex-direction: column;
           justify-content: center;
