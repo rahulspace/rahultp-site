@@ -9,6 +9,9 @@
           <h1>Rahul TP</h1>
           <h2>Developer</h2>
         </div>
+        <div class="portfolio">
+          <h2>Portfolio</h2>
+        </div>
       </div>
       <div class="second-column">b</div>
     </div>
@@ -50,7 +53,8 @@ export default {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          height: calc(50vh - 72px);
+          height: calc(50vh - 36px);
+          margin-bottom: 24px;
 
           h3 {
             font-size: 20px;
@@ -68,6 +72,21 @@ export default {
 
           h2 {
             font-size: 23px;
+            color: #ff7804;
+            font-weight: 900;
+          }
+        }
+
+        .portfolio {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: calc(50vh - 36px);
+          background: #ffffff;
+
+          h2 {
+            font-size: 30px;
             color: #ff7804;
             font-weight: 900;
           }
