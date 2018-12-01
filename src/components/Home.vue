@@ -7,7 +7,7 @@
         <div class="title">
           <h3>Hi There! I'm</h3>
           <h1>Rahul TP</h1>
-          <h2>Developer</h2>
+          <h2 id="content"></h2>
         </div>
         <div class="portfolio box">
           <h2>
@@ -38,6 +38,68 @@ export default {
     return {
       
     }
+  },
+
+  methods: {
+    typewriter() {
+      var contentIndex = 0
+      var content = 'developer'
+
+      var i = 0
+      var TypingDuration = 200
+      var BackspaceDuration = 100
+      var delayAfterType = 500
+
+      var value = ''
+
+      var status = 'increment'
+      function timeout() {
+        if(status == 'increment') {
+          setTimeout(function () {
+            if(i == content.length) {
+              setTimeout(function () {
+              status = 'decrement'
+            }, delayAfterType)
+              
+            }
+            i++
+            value = content.substr(0, i);
+          document.getElementById("content").innerHTML = value;
+          
+          timeout();
+          }, TypingDuration);
+        }
+        
+        if(status == 'decrement') {
+          setTimeout(function () {
+            if(i == 0) {
+              status = 'increment'
+              
+              contentIndex ++
+              if(content == 'developer') {
+                content = 'Web Designer'
+              } else if(content == 'Web Designer') {
+                content = 'Photographer'
+              } else if(content == 'Photographer') {
+                content = 'developer'
+              }
+            }
+            i--
+            value = content.substr(0, i);
+            
+          document.getElementById("content").innerHTML = value;
+          
+          timeout();
+          }, BackspaceDuration);
+        }
+      }
+
+      timeout()
+    }
+  },
+
+  mounted() {
+    this.typewriter()
   }
 }
 </script>
