@@ -28,7 +28,7 @@
         </div>
       </div>
     </div>
-    <div class="modal">
+    <div id="modal" class="modal">
       Modal
     </div>
   </div>
@@ -109,6 +109,12 @@ export default {
 
   mounted() {
     this.typewriter()
+    var model = document.getElementById("modal")
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
   }
 }
 </script>
