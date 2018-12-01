@@ -9,7 +9,7 @@
           <h1>Rahul TP</h1>
           <h2 id="content"></h2>
         </div>
-        <div class="portfolio box">
+        <div class="portfolio box" @click="showModal()">
           <h2>
             <span data-hover="Portfolio">Portfolio</span>
           </h2>
@@ -28,10 +28,15 @@
         </div>
       </div>
     </div>
+    <div class="modal">
+      Modal
+    </div>
   </div>
 </template>
 
 <script>
+import $ from 'jquery'
+
 export default {
   name: 'Home',
   data () {
@@ -95,6 +100,10 @@ export default {
       }
 
       timeout()
+    },
+
+    showModal() {
+      $(".modal").css("display","block");
     }
   },
 
@@ -224,6 +233,17 @@ export default {
           }
         }
       }
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.4);
     }
   }
 </style>
