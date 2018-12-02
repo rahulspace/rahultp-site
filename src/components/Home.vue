@@ -29,7 +29,9 @@
       </div>
     </div>
     <div id="modal" class="modal">
-      Modal
+      <div class="modal-wrapper">
+        Hello
+      </div>
     </div>
   </div>
 </template>
@@ -103,7 +105,9 @@ export default {
     },
 
     showModal() {
-      $(".modal").css("display","block");
+      $(".modal").css("display", "flex")
+      $(".modal").hide()
+      $(".modal").fadeIn();
     }
   },
 
@@ -112,7 +116,7 @@ export default {
     var model = document.getElementById("modal")
     window.onclick = function(event) {
       if (event.target == modal) {
-        modal.style.display = "none";
+        $(".modal").fadeOut();
       }
     }
   }
@@ -250,6 +254,13 @@ export default {
       width: 100%;
       height: 100%;
       background-color: rgba(0,0,0,0.4);
+
+      .modal-wrapper {
+        width: 75vw;
+        height: 75vh;
+        background: #ffffff;
+        margin: auto auto;
+      }
     }
   }
 </style>
