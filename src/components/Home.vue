@@ -9,19 +9,19 @@
           <h1>Rahul TP</h1>
           <h2 id="content"></h2>
         </div>
-        <div class="portfolio box" @click="showModal()">
+        <div class="portfolio box" @click="showModal('portfolio')">
           <h2>
             <span data-hover="Portfolio">Portfolio</span>
           </h2>
         </div>
       </div>
       <div class="second-column">
-        <div class="about box">
+        <div class="about box" @click="showModal('about')">
           <h2>
             <span data-hover="About me">About me</span>
           </h2>
         </div>
-        <div class="contact box">
+        <div class="contact box" @click="showModal('contact')">
           <h2>
             <span data-hover="Get in touch">Get in touch</span>
           </h2>
@@ -30,7 +30,7 @@
     </div>
     <div id="modal" class="modal">
       <div class="modal-wrapper">
-        Hello
+        
       </div>
     </div>
   </div>
@@ -43,7 +43,7 @@ export default {
   name: 'Home',
   data () {
     return {
-      
+      modal: ''
     }
   },
 
@@ -104,7 +104,8 @@ export default {
       timeout()
     },
 
-    showModal() {
+    showModal(modalName) {
+      this.modal = modalName
       $(".modal").css("display", "flex")
       $(".modal").hide()
       $(".modal").fadeIn();
