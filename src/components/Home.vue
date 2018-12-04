@@ -30,7 +30,11 @@
     </div>
     <div id="modal" class="modal">
       <div class="modal-wrapper">
-        
+        <div v-if="modal == 'about'" class="about-modal">
+          <h1>Rahul TP</h1>
+          <h2>Co-Founder of Vaaip</h2>
+          <p>Hi, I'm Rahul from Calicut, India. I'm a person who is willing to learn and adapts quickly. And keen to design and security. I have been constantly learning new skills and techniques</p>
+        </div>
       </div>
     </div>
   </div>
@@ -261,6 +265,22 @@ export default {
         height: 75vh;
         background: #ffffff;
         margin: auto auto;
+      }
+    }
+
+    .about-modal {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      h1 {
+        margin-bottom: 30px;
+      }
+      
+      p {
+        width: 50vw;
+        text-align: center;
       }
     }
   }
